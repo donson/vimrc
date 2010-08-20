@@ -28,7 +28,6 @@
 "
 " Get out of VI's compatible mode..
 set nocompatible
-
 if v:version < 700
     echoerr 'This vimrc requires Vim 7 or later.'
     finish
@@ -60,25 +59,24 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
-" Fast saving
- nmap <leader>w :w!<cr>
-
-" Fast editing of the .vimrc
- map <leader>e :e! $VIMRC<cr>
-
 " When vimrc is edited, reload it
- autocmd! bufwritepost vimrc source $VIMRC
+autocmd! bufwritepost vimrc source $VIMRC
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Set 7 lines to the curors - when moving vertical..
 set so=7
 set wildmenu "Turn on WiLd menu
+set wildmode=longest,full
+set wildignore=*.bak,*.o,*.e,*~,*.pyc,*.svn
 set ruler "Always show current position
 set cmdheight=2 "The commandbar height
 set hidden "Change buffer - without saving
-
+set number " Show line number
+" Do not redraw, when running macros.. lazyredraw
+set lazyredraw
 " Set backspace config
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
@@ -87,6 +85,7 @@ set hlsearch "Highlight search things
 set incsearch "Make search act like search in modern browsers
 set magic "Set magic on, for regular expressions
 set showmatch "Show matching bracets when text indicator is over them
+set showfulltag
 set mat=2 "How many tenths of a second to blink
 
 " No sound on errors
@@ -96,13 +95,6 @@ set t_vb=
 
 " Make GUI File Open use current directory
 set browsedir=buffer
-" Show matching bracets
-set showmatch
-set showfulltag
-" How many tenths of a second to blink
-set mat=2
-" Highlight search things
-set hlsearch
 " Have the mouse enabled all the time:
 set mouse=a
 " show incomplete commands
@@ -216,9 +208,9 @@ endif
      "colorscheme pablo
 "endif
 
-if has("gui_macvim")
-    set transparency=2
-endif
+"if has("gui_macvim")
+    "set transparency=2
+"endif
 
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -267,6 +259,8 @@ map <leader>e :e ~/.buffer<cr>
 map <leader>M :%s/\r//g<cr>
 " Fast Quit
 map <leader>q :q<cr>
+" Fast editing of the .vimrc
+map <leader>ev :e! $VIMRC<cr>
 " Fast reloading of the .vimrc
 map <leader>s :source $VIMRC<cr>
 " Undolist
@@ -334,7 +328,7 @@ map <F2> :%s/\s*$//g<cr>:noh<cr>''
 " Paste toggle - when pasting something in, don't indent.
 set pastetoggle=<F3>
 " SVN Diff
-map <F8> :new<cr>:read !svn diff<cr>:set syntax=diff buftype=nofile<cr>gg
+"map <F8> :new<cr>:read !svn diff<cr>:set syntax=diff buftype=nofile<cr>gg
 " ROT13
 map <F12> ggVGg?
 
@@ -360,7 +354,7 @@ function! CurDir()
 endfunction
 
 "Format the statusline
-set statusline=%F%m%r%h%w\ CW\ %r%{CurDir()}%h\ [%Y,%{&ff},%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ [POS=%l,%v,%p%%,%L] 
+set statusline=%F%m%r%h%w\ CW\ %r%{CurDir()}%h\ [%Y,%{&ff},%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ [POS=%l,%v,%p%%,%L]
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -378,7 +372,7 @@ function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
     unmenu Foo
-endfunction 
+endfunction
 
 " From an idea by Michael Naumann
 function! VisualSearch(direction) range
@@ -421,7 +415,7 @@ cnoremap <C-N> <Down>
 
 func! Cwd()
   let cwd = getcwd()
-  return "e " . cwd 
+  return "e " . cwd
 endfunc
 
 func! DeleteTillSlash()
@@ -429,7 +423,7 @@ func! DeleteTillSlash()
   let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\]\\).*", "\\1", "")
   if g:cmd == g:cmd_edited
     let g:cmd_edited = substitute(g:cmd, "\\(.*\[\\\\\]\\).*\[\\\\\]", "\\1", "")
-  endif   
+  endif
   return g:cmd_edited
 endfunc
 
@@ -484,9 +478,9 @@ map <left> :bp<cr>
 
 " Tab configuration
 map <leader>tn :tabnew %<cr>
-map <leader>te :tabedit 
+map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
+map <leader>tm :tabmove
 
 " When pressing <leader>cd switch to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>
@@ -508,7 +502,7 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-" Specify the behavior when switching between buffers 
+" Specify the behavior when switching between buffers
 try
   set switchbuf=usetab
   set stal=2
@@ -562,18 +556,18 @@ map <leader>n :NERDTreeToggle<cr>
 let NERDTreeIgnore=['.DS_Store', '\.svn$', '\.git', '\.pyc$', '\.mp3', '\.jpg', '\.gif', '\.zip', '\.pdf', '\.gz', '\.bz2', '\.dmg', '\.doc', '\.tar', '\.png', '\.rtf']
 
 " project.vim
-map <leader>p :Project<cr>
+"map <leader>p :Project<cr>
 
 " matrix.vim
 "map <leader>m :Matrix<cr>
 
 " html.vim
-let g:no_html_toolbar = 1
-let g:do_xhtml_mappings = 'yes'
-let g:html_tag_case = 'lowercase'
+"let g:no_html_toolbar = 1
+"let g:do_xhtml_mappings = 'yes'
+"let g:html_tag_case = 'lowercase'
 
 " closetag.vim
-let g:closetag_html_style=1
+"let g:closetag_html_style=1
 
 " ToHTML
 let use_xhtml = 1
@@ -581,38 +575,38 @@ let html_use_css = 1
 let html_number_lines = 0
 
 " mru.vim (History file List, Most Recent Used)
-map <leader>h :MRU <cr>
-let MRU_Max_Entries = 30
-let MRU_Exclude_Files='^/tmp/.*\|^/var/tmp/.*'
-let MRU_Include_Files='\.c$\|\.cpp$\|\.h$\|\.hpp$'  " For C Source
-let MRU_Window_Height=15
-let MRU_Add_Menu=0
+"map <leader>h :MRU <cr>
+"let MRU_Max_Entries = 30
+"let MRU_Exclude_Files='^/tmp/.*\|^/var/tmp/.*'
+"let MRU_Include_Files='\.c$\|\.cpp$\|\.h$\|\.hpp$'  " For C Source
+"let MRU_Window_Height=15
+"let MRU_Add_Menu=0
 
 " fencview.vim
-let g:fencview_autodetect = 0
+"let g:fencview_autodetect = 0
 
 " acp.vim & SnipMate.vim
-let g:acp_behaviorSnipmateLength =1
-let g:acp_enableAtStartup = 1
-let g:acp_completeOption = '.,w,b,u,t,i,k'
-let g:snips_author = 'Donson <http://www.donsonx.com/>'
+"let g:acp_behaviorSnipmateLength =1
+"let g:acp_enableAtStartup = 1
+"let g:acp_completeOption = '.,w,b,u,t,i,k'
+"let g:snips_author = 'Donson <http://www.donsonx.com/>'
 "autocmd FileType python set ft=python.django " For SnipMate
-autocmd FileType html set ft=html.django_template.jquery " For SnipMate & jquery
+"autocmd FileType html set ft=html.django_template.jquery " For SnipMate & jquery
 
 " fuf.vim
-map <leader>fb :FufDirWithCurrentBufferDir<cr>
-map <leader>fd :FufDir<cr>
-map <leader>ff :FufFile<cr>
-map <leader>ft :FufTag<cr>
-map <leader>fh :FufHelp<cr>
+"map <leader>fb :FufDirWithCurrentBufferDir<cr>
+"map <leader>fd :FufDir<cr>
+"map <leader>ff :FufFile<cr>
+"map <leader>ft :FufTag<cr>
+"map <leader>fh :FufHelp<cr>
 
 " JSLint.vim
-let g:jslint_command = $VIMFILES . '/extra/jslint/jsl'
-let g:jslint_command_options = '-conf ' .  $VIMFILES . '/extra/jslint/jsl.conf -nofilelisting -nocontext -nosummary -nologo -process'
+"let g:jslint_command = $VIMFILES . '/extra/jslint/jsl'
+"let g:jslint_command_options = '-conf ' .  $VIMFILES . '/extra/jslint/jsl.conf -nofilelisting -nocontext -nosummary -nologo -process'
 "autocmd BufWritePost,FileWritePost *.js call JavascriptLint()
 
 " ZenCoding
-let g:user_zen_expandabbr_key = '<c-j>'
+"let g:user_zen_expandabbr_key = '<c-j>'
 "let g:use_zen_complete_tag = 1
 
 
@@ -639,10 +633,10 @@ au FileType javascript setl nocindent
 au FileType javascript imap <c-t> AJS.log();<esc>hi
 au FileType javascript imap <c-a> alert();<esc>hi
 
-au FileType javascript inoremap <buffer> $r return 
+au FileType javascript inoremap <buffer> $r return
 au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
 
-function! JavaScriptFold() 
+function! JavaScriptFold()
     setl foldmethod=syntax
     setl foldlevelstart=1
     syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend
@@ -680,33 +674,5 @@ if has("win32")
     autocmd FileType css,html,htm map <leader>cthe <Esc>:%! csstidy - --silent=true --template=highest<CR>
     autocmd FileType css,html,htm map <leader>cthm <Esc>:%! csstidy - --template=highest<CR>
 endif
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => MyDiff
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set diffexpr=MyDiff()
-function MyDiff()
-  let opt = '-a --binary '
-  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
-  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
-  let arg1 = v:fname_in
-  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
-  let arg2 = v:fname_new
-  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
-  let arg3 = v:fname_out
-  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
-  let eq = ''
-  if $VIMRUNTIME =~ ' '
-    if &sh =~ '\<cmd'
-      let cmd = '""' . $VIMRUNTIME . '\diff"'
-      let eq = '"'
-    else
-      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
-    endif
-  else
-    let cmd = $VIMRUNTIME . '\diff'
-  endif
-  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
-endfunction
 
 set dictionary+=$VIMFILES/dict/dicts.txt
