@@ -553,13 +553,13 @@ let tlist_php_settings = 'php;c:class;d:constant;f:function'
 
 " NERD_tree.vim
 map <leader>n :NERDTreeToggle<cr>
-let NERDTreeIgnore=['.DS_Store', '\.svn$', '\.git', '\.pyc$', '\.mp3', '\.jpg', '\.gif', '\.zip', '\.pdf', '\.gz', '\.bz2', '\.dmg', '\.doc', '\.tar', '\.png', '\.rtf']
+let NERDTreeIgnore=['\~$','.DS_Store', '\.svn$', '\.git', '\.pyc$', '\.mp3', '\.jpg', '\.gif','\.swf', '\.zip', '\.pdf', '\.gz', '\.bz2', '\.dmg', '\.doc', '\.tar', '\.png', '\.rtf']
 
 " project.vim
 "map <leader>p :Project<cr>
 
 " matrix.vim
-"map <leader>m :Matrix<cr>
+map <leader>m :Matrix<cr>
 
 " html.vim
 "let g:no_html_toolbar = 1
@@ -653,12 +653,6 @@ endfunction
 let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
 set grepprg=/bin/grep\ -nH
 autocmd FileType vim map <buffer> <leader><space> :w!<cr>:source %<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => MISC
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Csstidy
