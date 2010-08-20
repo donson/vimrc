@@ -1,4 +1,29 @@
-taglist     http://vim-taglist.sourceforge.net
-ctags       http://ctags.sourceforge.net/
-NERD_tree   http://www.vim.org/scripts/script.php?script_id=1658 
-matrix      http://www.vim.org/scripts/script.php?script_id=1189 
+taglist         http://vim-taglist.sourceforge.net
+ctags           http://ctags.sourceforge.net/
+NERD_tree       http://www.vim.org/scripts/script.php?script_id=1658 
+"黑客帝国
+matrix          http://www.vim.org/scripts/script.php?script_id=1189 
+"代码提示
+autocomplpop    http://www.vim.org/scripts/script.php?script_id=1879 
+"增强%匹配
+matchit         http://www.vim.org/scripts/script.php?script_id=39 
+
+
+To try:
+xptemplate
+neocomplcache
+
+======================================================================
+XPTemplate很强大，号称“终极snippet解决方案”
+XPTemplate 支持的功能：
+* 实时更新的内容填写
+* 智能下拉菜单提示snippet名
+* 动态的代码片段生成。如if中可选的else，或switch中的case
+* 上下文敏感。如自由的在HTML文件中使用javascript和css的代码片段
+* 默认<Tab>移动到下个位置，<Shift-Tab>移动到上1个位置
+* 可以在正在填写的片段中嵌套使用其他代码片段
+* 对visual选择的内容可以生成包含的片段，类似eclipse的template
+
+作者博客
+http://hi.baidu.com/drdr/blog 
+

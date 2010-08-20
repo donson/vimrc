@@ -586,12 +586,12 @@ let html_number_lines = 0
 "let g:fencview_autodetect = 0
 
 " acp.vim & SnipMate.vim
-"let g:acp_behaviorSnipmateLength =1
-"let g:acp_enableAtStartup = 1
-"let g:acp_completeOption = '.,w,b,u,t,i,k'
-"let g:snips_author = 'Donson <http://www.donsonx.com/>'
-"autocmd FileType python set ft=python.django " For SnipMate
-"autocmd FileType html set ft=html.django_template.jquery " For SnipMate & jquery
+let g:acp_behaviorSnipmateLength =1
+let g:acp_enableAtStartup = 1
+let g:acp_completeOption = '.,w,b,u,t,i,k'
+let g:snips_author = 'Donson <http://www.donsonx.com/>'
+autocmd FileType python set ft=python.django " For SnipMate
+autocmd FileType html set ft=html.django_template.jquery " For SnipMate & jquery
 
 " fuf.vim
 "map <leader>fb :FufDirWithCurrentBufferDir<cr>

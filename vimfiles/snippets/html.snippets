@@ -1,0 +1,584 @@
+# Some useful Unicode entities
+# Generic Doctype
+snippet doctype HTML 4.01 Strict
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
+	"http://www.w3.org/TR/html4/strict.dtd">
+snippet doctype HTML 4.01 Transitional
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""
+	"http://www.w3.org/TR/html4/loose.dtd">
+snippet doctype HTML 5
+	<!DOCTYPE HTML>
+snippet doctype XHTML 1.0 Frameset
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Strict
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Transitional
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+snippet doctype XHTML 1.1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+# HTML Doctype 4.01 Strict
+snippet docts
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
+	"http://www.w3.org/TR/html4/strict.dtd">
+# HTML Doctype 4.01 Transitional
+snippet doct
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""
+	"http://www.w3.org/TR/html4/loose.dtd">
+# HTML Doctype 5
+snippet doct5
+	<!DOCTYPE HTML>
+# XHTML Doctype 1.0 Frameset
+snippet docxf
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+# XHTML Doctype 1.0 Strict
+snippet docxs
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+# XHTML Doctype 1.0 Transitional
+snippet docxt
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+# XHTML Doctype 1.1
+snippet docx
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+snippet html
+	<html>
+	${1}
+	</html>
+snippet xhtml
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	${1}
+	</html>
+snippet body
+	<body>
+	    ${1}
+	</body>
+snippet head
+	<head>
+	    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	    <title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+	    ${2}
+	</head>
+snippet title
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+snippet script
+	<script type="text/javascript" charset="utf-8">
+	    ${1}
+	</script>${2}
+snippet scriptsrc
+	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
+snippet style
+	<style type="text/css" media="${1:screen}">
+	    ${2}
+	</style>${3}
+snippet base
+	<base href="${1}" target="${2}" />
+snippet div
+	<div ${1}="${2:name}">
+		${3}
+	</div>
+#snippet id
+#	id="${1}"
+#snippet cl
+#	class="${1}"
+#snippet a
+#	<a href="${1:#url}">${2:link}</a>
+snippet br
+	<br />
+# Embed QT Movie
+snippet movie
+	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+	    <param name="src" value="$1"`Close()`>
+	    <param name="controller" value="$4"`Close()`>
+	    <param name="autoplay" value="$5"`Close()`>
+	    <embed src="${1:movie.mov}"
+		    width="${2:320}" height="${3:240}"
+		    controller="${4:true}" autoplay="${5:true}"
+		    scale="tofit" cache="true"
+		    pluginspage="http://www.apple.com/quicktime/download/"
+	    `Close()[1:]`>
+	</object>${6}
+snippet flash
+	<object type="application/x-shockwave-flash" data="${1:.swf}" width="${2:400}" height="${3:300}">
+	    <param name="movie" value="$1" width="$2" height="$3" />
+	    <param name="wmode" value="transparent">
+	    <param name="allowScriptAccess" value="always" />
+	    <param name="allowFullScreen" value="true">
+	</object>
+snippet fieldset
+	<fieldset id="$1">
+	    <legend>${1:name}</legend>
+	    ${3}
+	</fieldset>
+#snippet form
+#	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
+#	    ${3}
+#	    <p><input type="submit" value="Submit"`Close()`></p>
+#	</form>
+#snippet h1
+#	<h1 id="${1:heading}">${2:$1}</h1>
+#snippet input
+#	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
+#snippet label
+#	<label for="${2:$1}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="${5}" id="${6:$2}"`Close()`>${7}
+snippet link
+	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
+snippet mailto
+	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
+snippet meta
+	<meta name="${1:name}" content="${2:content}"`Close()`>${3}
+#snippet opt
+#	<option value="${1:option}">${2:$1}</option>${3}
+#snippet optt
+#	<option>${1:option}</option>${2}
+#snippet select
+#	<select name="${1:some_name}" id="${2:$1}">
+#	    <option value="${3:option}">${4:$3}</option>
+#	</select>${5}
+#snippet table
+#	<table border="${1:0}">
+#	    <tr><th>${2:Header}</th></tr>
+#	    <tr><th>${3:Data}</th></tr>
+#	</table>${4}
+#snippet textarea
+#	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+# Non-Breaking Space
+# ←
+snippet left
+	&#x2190;
+# →
+snippet right
+	&#x2192;
+# ↑
+snippet up
+	&#x2191;
+# ↓
+snippet down
+	&#x2193;
+# ↩
+snippet return
+	&#x21A9;
+# ⇤
+snippet backtab
+	&#x21E4;
+# ⇥
+snippet tab
+	&#x21E5;
+# ⇧
+snippet shift
+	&#x21E7;
+# ⌃
+snippet control
+	&#x2303;
+# ⌅
+snippet enter
+	&#x2305;
+# ⌘
+snippet command
+	&#x2318;
+# ⌥
+snippet option
+	&#x2325;
+# ⌦
+snippet delete
+	&#x2326;
+# ⌫
+snippet backspace
+	&#x232B;
+# ⎋
+snippet escape
+	&#x238B;
+# html snippets
+# @author Donson
+# E-mail donson86@gmail.com
+snippet id
+	id="${1:idName}"${2}
+snippet cls
+	class="${1:clsName}"${2}
+snippet h
+	height="${1}"${2}
+snippet w
+	width="${1}"${2}
+snippet wh
+	width="${1}" height="${2}"${3}
+snippet alt
+	alt="${1}"${2}
+snippet ti
+	title="${1}"${2}
+snippet p
+	<p>${1}</p>
+snippet str
+	<strong>${1}</strong>${2} 
+snippet sp
+	<span>${1}</span>${2}
+snippet spc
+	<span class="${1:cls}">${2}</span>${3}
+snippet em
+	<em>${1}</em>
+snippet h1
+	<h1>${1}</h1>
+snippet h2
+	<h2>${1}</h2>
+snippet h3
+	<h3>${1}</h3>
+snippet h4
+	<h4>${1}</h4>
+snippet h5
+	<h5>${1}</h5>
+snippet h6
+	<h6>${1}</h6>
+snippet hx
+	<h${1}>${2}</h$1>
+snippet nb
+	&nbsp;
+snippet hr
+	<hr />
+snippet a
+	<a href="${1:#}">${2}</a>${3}
+snippet at
+	<a target="_blank" href="${1:#}">${2}</a>${3}
+snippet ac
+	<a class="${1}" href="${2:#}">${3}</a>${4}
+snippet atc
+	<a target="_blank" class="${1}" href="${2:#}">${3}</a>${4}
+snippet img
+	<img src="img/${3}.png" width="${1}" height="${2}" alt="${4}" />
+snippet imgn
+	<img src="img/${1}.png" alt="${4}" />${5}
+snippet dc
+	<div class="${1:clsName}">
+		${2}
+	</div>
+snippet di
+	<div id="${1:idName}">
+		${2}
+	</div>
+snippet dcc
+	<!--=S ${1:clsName} -->
+	<div class="$1">
+		${2}
+	</div>
+	<!--=E $1 -->
+snippet dcx
+	<!--${1:==}S ${2:clsName} -->
+	<div class="$2">
+		${3}
+	</div>
+	<!--$1E $2 -->
+snippet dic
+	<!--=S ${1:idName} -->
+	<div id="$1">
+		${2}
+	</div>
+	<!--=E $1 -->
+snippet dix
+	<!--${1:==}S ${2:idName} -->
+	<div id="$2">
+		${3}
+	</div>
+	<!--$1E $2 -->
+snippet dx
+	<!--${1:==}S ${2:clsName} -->
+		${3}
+	<!--$1E $2 -->
+snippet dl
+	<dl class="${1:clsName}">
+		<dt>${2}</dt>
+		<dd>${3}</dd>
+	</dl>
+snippet dt
+	<dt>${1}</dt>
+snippet dd
+	<dd>${1}</dd>
+snippet ul
+	<ul>
+		<li>${1}</li>
+	</ul>
+snippet uc
+	<ul class="${1:clsName}">
+		<li>${2}</li>
+	</ul>
+snippet ua
+	<ul>
+		<li><a href="${1:#}">${2}</a></li>
+	</ul>
+snippet uca
+	<ul class="${1:clsName}">
+		<li><a href="${2:#}">${3}</a></li>
+	</ul>
+snippet ol
+	<ol>
+		<li>${1}</li>
+	</ol>
+snippet oa
+	<ol>
+		<li><a href="${1:#}">${2}</a></li>
+	</ol>
+snippet oca
+	<ol class="${1:clsName}">
+		<li><a href="${2:#}">${3}</a></li>
+	</ol>
+snippet scr
+	<script charset="utf-8" type="text/javascript">
+	<!--
+		${1}
+	//-->
+	</script>
+snippet lscr
+	<script charset="utf-8" type="text/javascript" src="js/${1:common}.js"></script>${2}
+snippet css
+	<style type="text/css">
+	<!--
+		${1}
+	-->
+	</style>
+snippet lcss
+	<link rel="stylesheet" type="text/css" href="img/${1:style}.css" />${2}
+snippet tpl
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="Keywords" content="${2:$1}" />
+		<meta name="Description" content="${3:$2}" />
+	    <title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+	    <link rel="stylesheet" type="text/css" href="img/${4:style}.css" />
+	</head>
+	<body>
+	    ${5}
+	</body>
+	</html>
+snippet form
+	<form method="post" action="${1:#}">
+		${2}
+	</form>
+snippet lab
+	<label>${1}</label>
+snippet label
+	<label for="${2:$1}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="${5}" id="${6:$2}" />${7}
+snippet input
+	<input type="${1:text/submit/hidden/button/radio/checkbox}" name="${2:$1_name}" value="${3}" />${4}
+snippet intxt
+	<input type="${1:text}" name="${2:$1_name}" value="${3}" />${4}
+snippet inhide
+	<input type="${1:hidden}" name="${2:$1_name}" value="${3}" />${4}
+snippet insub
+	<input type="${1:submit}" name="${2:$1_name}" value="${3}" />${4}
+snippet inbtn
+	<input type="${1:button}" name="${2:$1_name}" value="${3}" />${4}
+snippet radio 
+	<input type="${1:radio}" name="${2:$1_name}" value="${3}" />${4}
+snippet checkbox
+	<input type="${1:checkbox}" name="${2:$1_name}" value="${3}" />${4}
+snippet textarea
+	<textarea name="${1:name}">${2}</textarea>${3}
+snippet select
+	<select name="${1:some_name}" id="${2:$1}">
+	    <option value="${3:option}">${4:$3}</option>
+	</select>${5}
+snippet opt
+	<option>${1:option}</option>${2}
+snippet optv
+	<option value="${1:option}">${2:$1}</option>${3}
+snippet table
+	<table width="${1:100%}" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<th>${2}</th>
+			<td>${3}</td>
+		</tr>
+	</table>
+snippet tr
+	<tr>
+		<th>${1}</th>
+		<td>${2}</td>
+	</tr>
+snippet td
+	<td>${1}</td>
+snippet th
+	<th>${1}</th>
+snippet col
+	 colspan="${1}"${2}
+snippet val
+	 valign="${1}"${2}
+snippet thead
+	<thead>
+		${1}
+	</thead>
+snippet tbody
+	<tbody>
+		${1}
+	</tbody>
+snippet tfoot
+	<tfoot>
+		${1}
+	</tfoot>
+snippet clear
+	<div class="clear_float"></div>${1}	
+#aipai.com
+snippet b6
+	<div class="blank6"></div>
+snippet b8
+	<div class="blank8"></div>
+snippet b9
+	<div class="blank9"></div>
+snippet b10
+	<div class="blank10"></div>
+snippet b12
+	<div class="blank12"></div>
+snippet b14
+	<div class="blank14"></div>
+snippet b15
+	<div class="blank15"></div>
+snippet b18
+	<div class="blank18"></div>
+snippet atpl
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Keywords" content ="游戏视频,爱拍游戏,玩家宝宝" />
+		<meta name="Description" content="游戏视频,爱拍游戏,玩家宝宝" />
+		<meta name="robots" content="index, follow" />
+		<meta name="googlebot" content="index, follow" />
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`} - 爱拍游戏!aipai!</title>
+		<link rel="stylesheet" type="text/css" href="../common/img/head/style.css" />
+		<link rel="stylesheet" type="text/css" href="img/${2:style}.css" />
+		<script charset="utf-8" type="text/javascript" src="../common/js/jquery.js"></script>
+		<script charset="utf-8" type="text/javascript" src="../common/js/mydialog.js"></script>
+	</head>
+	<body>
+	<!--=S head & bar -->
+	<tal:block metal:use-macro="macro/nav.html/nav">
+	<div class="head">
+		<div class="logo"><a href="http://www.aipai.com/"><img src="../common/img/head/logo3.gif" width="127" height="57" alt="爱拍游戏!aipai!"/></a></div>
+		<div class="shareGame"><img src="../common/img/head/share1.gif" width="168" height="63" alt="分享我们的游戏时光!" /></div>
+		<div class="getbaby1">
+			<div><a href="http://www.aipai.com/download/up.html" target="_blank"><img src="../common/img/head/upwork.gif" width="74" height="24" /></a></div>
+			<div><a href="http://www.aipai.com/download/baobao.html#jiaocheng" target="_blank"><img src="../common/img/head/bbfile.gif" width="74" height="24" /></a></div>
+		</div>
+		<div id="loginDiv1" class="login" style="display:none">
+			<div class="inputText"> 
+				<label>宝宝号/邮箱：</label>
+				<input id="login_user" name="login_user" type="text" class="text" size="32" maxlength="100" tabindex="1"/><label>密码：</label>
+				<input id="login_pass" name="login_pass" type="password" class="text" size="32" maxlength="32" tabindex="2" onkeypress="if (event.keyCode==13) {ajaxLogin('login_user','login_pass','login_keep');}"/>
+				<input id="login_keep" name="login_save" type="checkbox" checked="checked" class="check" /><label class="remember">记住</label>   
+				<input type="submit" value="登录" class="submit" tabindex="3" onmouseup="ajaxLogin('login_user','login_pass','login_keep')" onkeypress="if (event.keyCode==13) {ajaxLogin('login_user','login_pass','login_keep');}"/>
+				<span class="vbnt"><a href="http://www.aipai.com/member.html"><img src="../common/img/head/actbnt.gif" width="59" height="20" alt="免费激活会员" /></a></span>
+				<span>
+					<em><a href="http://www.aipai.com/getpass.php" target="_blank">忘记密码</a></em>
+					<em><a href="http://www.aipai.com/signup.php" target="_blank">注册</a></em>
+					<em><a href="http://bbs.aipai.com" target="_blank">充值中心</a></em>
+				</span>
+			</div>
+		</div>
+		<div id="loginDiv2" class="login" style="display:block">
+			<div class="userName"><a id="userLink" href="">吞掉地球的美大人</a></div>
+			<div class="user"><a id="userLink2" href=""><img id="userPic" src="../common/img/head/user.gif" height="20" width="20" alt="" /></a></div>
+			<div class="news"><a href="http://www.aipai.com/sysmsg.php">消息<span id="login_mailnum_span">(<span id="login_mailnum">166</span>)<span id="login_mailimg"><img src="../common/img/news.gif" width="20" height="13" /></span></span></a></div>
+			<div class="inputText">
+				<span class="vbnt"><a href="http://www.aipai.com/member.html"><img src="../common/img/head/actbnt.gif" width="59" height="20" alt="免费激活会员" /></a></span>
+				<span>
+					<em><a id="userSpaceLink" href="">我的爱拍</a></em>
+					<em><a href="http://bbs.aipai.com" target="_blank" title="帮助论坛">充值中心</a></em>
+					<em><a id="userManageLink" href="" target="_blank">管理</a></em>
+					<em><a href="javascript:ajaxLogOut();">登出</a></em>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="bar">
+		<div class="barC"></div><div class="barC1"></div>
+		<div class="barC0">
+			<div class="navMax">
+				<div class="aipai"><a href="#" onclick="checkLoginSpace();return false">我的爱拍</a></div>
+				<form name="search" action="http://so.aipai.com/search" method="get" target="_blank" tal:attributes="target php:isset(search_blank)?'_self':'_blank'" id="formsearch">            
+				<div class="searchBox">
+					<div class="formBor">
+						<select id="ktype" onchange="searchTypeK()">
+							<option value="card" tal:attributes="selected php:type=='card'?'selected':''">视频</option>
+							<option value="book" tal:attributes="selected php:type=='book'?'selected':''">连环画</option>
+							<option value="user" tal:attributes="selected php:type=='all'?'selected':''">玩家</option>
+							<option value="group" tal:attributes="selected php:type=='game'?'selected':''">组织</option>
+						</select>
+					</div>
+					<input type="hidden" name="type" value="card" id="searchType" />
+					<div class="formBor"><input name="key" type="text" class="intips" value="${keyword}" id="key" onfocus="clearWord(this.value)" onkeypress="if (event.keyCode==13) {searchTypeK();}"/></div>
+					<div class="bu"><input  src="img/sr.gif" type="submit" value=""/></div>
+				</div>
+				</form>
+				<div class="navBox">
+					<div class="nav">
+						<div class="nj"></div>
+						<div class="nj0">
+							<ul>
+								<li><a href="http://www.aipai.com/">首页</a></li>
+								<li><a href="http://www.aipai.com/card.html" title="录像：即游戏视频，酷绚！">视频</a>·<a href="http://www.aipai.com/book.html" title="连环画：即游戏相册，精美！">连环画</a></li>
+								<li><a href="http://www.aipai.com/huodong/baicheng/" target="_blank" title="百城联赛">百城联赛</a><img src="../common/img/head/hot1.gif" width="36" height="17" class="img2" /></li>
+								<li><a href="http://www.aipai.com/group.html" title="建立你的组织，竖起你的旗帜！">组织</a></li>
+								<li><a href="http://www.aipai.com/declare.html">正在发布</a></li>
+								<li class="pd0"><a href="http://www.aipai.com/download/baobao.html" title="下载玩家宝宝">玩家宝宝下载</a><img src="../common/img/head/downi.gif" class="img1" /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</tal:block>
+	<!--=E head & bar -->
+
+	<!--=S dir -->
+	<tal:block metal:use-macro="macro/menu.html/space_bar">
+	<div class="dir">
+		<div class="road">当前位置：<a href="#" title="爱拍游戏网首页">爱拍游戏</a> &gt; </div>
+		<h1>${3:$1}</h1>
+		<tal:block condition="loginBid">
+		<div class="addFriend">
+			<div class="af"><a href="#">邀请好友</a></div>
+			<div class="broline"></div>
+			<div class="sf"><a href="#">寻找好友</a></div>
+		</div>
+		</tal:block>
+	</div>
+	</tal:block>
+
+	<!--=E dir -->
+	<div class="blank8"></div>
+
+	<!--=S area -->
+	<div class="area">
+		${4}		
+	</div>
+	<!--=E area -->
+
+	<div class="blank8"></div>
+
+	<!--=S foot -->
+	<tal:block metal:use-macro="macro/foot.html/foot">
+	<div class="foot">
+		<div class="text">
+			<a target="_blank" class="black" href="http://www.aipai.com/signup.php">免费注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://bbs.aipai.com/viewthread.php?tid=1090&amp;extra=page=1">客服</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://www.aipai.com/about/help.html">玩家宝宝帮助</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://www.aipai.com/about/product.html">产品与服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://www.aipai.com/about/contact.html">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://www.aipai.com/about/service.html">广告服务</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://www.aipai.com/about/copyright.html">版权指引</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://www.aipai.com/about/map.html">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://www.aipai.com/about/friend.html">友情链接</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a target="_blank" href="http://www.aipai.com/about/zhaopin.html">加入爱拍</a>
+		</div>
+		<div class="site">版权所有 广州爱拍网络科技有限公司 增值电信业务经营许可证：粤B2-20065254 <a target="_blank" href="http://www.aipai.com/app/www/templates/common/img/cerificate.gif">信息网络传播视听节目许可证：1910412号</a></div>
+	</div>
+	</tal:block> 
+	<!--=E foot -->
+	</body>
+	</html>

@@ -1,0 +1,325 @@
+snippet import
+	@import url("${1:/static/css/style.css}");
+#snippet c
+#	${1:express} {
+#	    ${2:property}
+#	}
+#snippet b
+#	background: ${1:transparent} url('${2:img/logo.jpg}') ${3:no-repeat|repeat-x|repeat-y};
+#snippet bo
+#	border: ${1:1}px solid #${2:#999};
+#snippet cur
+#	cursor: ${1:pointer};
+#snippet d
+#	display: ${1:none};
+#snippet w
+#	width: ${1:1}px;
+#snippet h
+#	height: ${1:1}px;
+snippet m
+	margin: ${1:0} auto;
+snippet p
+	padding: ${1:0 1px};
+#snippet t
+#	text-align: ${1:center};
+#snippet l
+#	line-height: ${1:12}px;
+#snippet f
+#	float: ${1:left};
+snippet font
+	font: 12px/1 "HelveticaNeue","Helvetica Neue",Helvetica, Tahoma, Arial, \5b8b\4f53, sans-serif;
+#snippet fs
+#	font-size: ${1:12}px;
+snippet fw
+	font-weight: ${1:bold};
+#snippet v
+#	vertical-align: ${1:middle};
+snippet o
+	overflow: ${1:hidden};
+snippet lvha
+	${1:ID} a:link, $1 a:visited {
+	}
+	$1 a:hover, $1 a:active {
+	}
+snippet reset
+	@charset "utf-8";
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, font, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td {
+	    margin: 0;
+	    padding: 0;
+	    border: 0;
+	    outline: 0;
+	    font-size: 100%;
+	    vertical-align: baseline;
+	    background: transparent;
+	}
+	html, textarea{ overflow: auto; }
+	ol, ul { list-style: none; }
+	blockquote, q { quotes: none; }
+	blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+	:focus { outline: 0; }
+	ins { text-decoration: none; }
+	del { text-decoration: line-through; }
+	table { border-collapse: collapse; border-spacing: 0; }
+	img,input,button { vertical-align: middle;}
+	a { color: #333;}
+	a:link,a:visited { text-decoration: none;}
+	a:hover,a:active { text-decoration: underline;}
+	p { line-height: 1.5; }
+	body {
+	    font: 12px/1 "HelveticaNeue","Helvetica Neue",Helvetica, Tahoma, Arial, \5b8b\4f53, sans-serif;
+	    line-height: 1;
+	    color: #333;
+	}
+snippet radius
+	.radius {
+	    -moz-border-radius: 5px;
+	    -khtml-border-radius: 5px;
+	    -webkit-border-radius: 5px;
+	    border-radius:5px;
+	}
+snippet list
+	${1:selector} {
+	    ${3}
+	}
+	    $1 ${4:ul} {
+		${5}
+	    }
+	    $1 li {
+		${5}
+	    }
+# css snippets
+# @author Donson
+# E-mail donson86@gmail.com
+
+snippet a
+	${1:express} {
+	    ${2}
+	}
+snippet c
+	.${1:express} {
+	    ${2}
+	}
+snippet x
+	#${1:express} {
+	    ${2}
+	}
+snippet cur
+	cursor:${1:pointer};${2}
+snippet cup
+	cursor:pointer;${1}
+snippet cud
+	cursor:default;${1}
+snippet f
+	font:normal normal bold 12px/1.5em "Arial";${1}
+snippet fs
+	font-size:${1:12}px;${2}
+snippet fb
+	font-weight:700;${1}
+snippet fn
+	font-weight:400;${1}
+snippet pa
+	padding:${1:10}px${2};${3}
+snippet paa
+	padding:${1:10}px 0 0 ${2:10}px;${3}
+snippet pax
+	padding:${1:10}px ${2:10}px ${3:10}px ${4:10}px;${5}
+snippet pat
+	padding-top:${1:10}px;${2}
+snippet par
+	padding-right:${1:10}px;${2}
+snippet pab
+	padding-bottom:${1:10}px;${2}
+snippet pal
+	padding-left:${1:10}px;${2}
+snippet ma
+	margin:${1:10}px;${2}
+snippet mac
+	margin:${1:0} auto;${2}
+snippet max
+	margin:${1:10}px ${2:10}px ${3:10}px ${4:10}px;${5}
+snippet mat
+	margin-top:${1:10}px;${2}
+snippet mar
+	margin-right:${1:10}px;${2}
+snippet mab
+	margin-bottom:${1:10}px;${2}
+snippet mal
+	margin-left:${1:10}px;${2}
+snippet bg
+	background:#${1:999} url(${2:s.png}) no-repeat${3};${4}
+snippet bc
+	background:#${1:999};${2}
+snippet bi
+	background:url(${1:s.png}) no-repeat${2};${3}
+snippet bix
+	background:url(${1:s.png}) repeat-x${2};${3}
+snippet biy
+	background:url(${1:s.png}) repeat-y${2};${3}
+snippet bp
+	background-position:${1};${2}
+snippet brn
+	background-repeat:no-repeat;${1}
+snippet brx
+	background-repeat:repeat-x;${1}
+snippet bry
+	background-repeat:repeat-y;${1}
+snippet bgn
+	background:none;${1}
+snippet hide
+	display:none;${1}
+snippet show
+	display:block;${1}
+snippet dn
+	display:none;${1}
+snippet db 
+	display:block;${1}
+snippet di
+	display:inline;${1}
+snippet dib
+	display:inline-block;${1}
+snippet w
+	width:${1:10}px;${2}
+snippet wau
+	width:auto;
+snippet h
+	height:${1:10}px;${2}
+snippet hau
+	height:auto;
+snippet co
+	color:#${1:fff};${2}
+snippet ta
+	text-align:${1:center};${2}
+snippet tac
+	text-align:center;${1}
+snippet tal
+	text-align:left;${1}
+snippet tar
+	text-align:right;${1}
+snippet ti
+	text-indent:${1:2em};${2}
+snippet tdn
+	text-decoration:none;${1}
+snippet	tdu
+	text-decoration:underline;${1}
+snippet lh
+	line-height:${1:18}px;${2}
+snippet lhx
+	line-height:${1:160}%;${2}
+snippet bo
+	border:${1:1}px solid #${2:999};${3}
+snippet bon
+	border:${1:0 }none;${2}
+snippet bot
+	border-top:${1:1}px solid #${2:999};${3}
+snippet bor
+	border-right:${1:1}px solid #${2:999};${3}
+snippet bob
+	border-bottom:${1:1}px solid #${2:999};${3}
+snippet bol
+	border-left:${1:1}px solid #${2:999};${3}
+snippet bolist
+	dashed dotted double groove inset outset ridge solid${1}
+snippet fl
+	float:left;${1}
+snippet	fr
+	float:right;${1}
+snippet fno
+	float:none;${1}
+snippet oh
+	overflow:hidden;${1}
+snippet ov
+	overflow:visible;${1}
+snippet os
+	overflow:scroll;${1}
+snippet	oa
+	overflow:auto;${1}
+snippet	poa
+	position:absolute;${1}
+snippet	por
+	position:relative;${1}
+snippet	pof
+	position:fixed;${1}
+snippet	pos
+	position:static;${1}
+snippet	l
+	left:${1:0}px;${2}
+snippet	r
+	right:${1:0}px;${2}
+snippet	t
+	top:${1:0}px;${2}
+snippet b
+	bottom:${1:0}px;${2}
+snippet tpl
+	body, div, dl, dt, dd, ul, ol, li, h1, h2, 
+	h3, h4, h5, h6, pre, form, fieldset, input, 
+	textarea, p, blockquote, th, td {
+		padding: 0;
+	    margin: 0;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	fieldset, img {
+		border: 0;
+	}
+	address, caption, cite, code, dfn, em, th, var {
+		font-weight: normal;
+		font-style: normal;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	caption, th {
+		text-align: left;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+		font-size: 100%;
+	}
+	q:before, q:after {
+		content: '';
+	}
+	abbr, acronym {
+		border: 0;
+	}
+	a {text-decoration: none;}
+
+	.clear_float {
+		clear: both;
+		float: none;
+		height:0;
+		line-height:0;
+		overflow:hidden;
+	}
+	.show{display:block;}
+	.hidden{display:none;}
+	.tl{text-align:left;}
+	.tr{text-align:right;}
+	.tc{text-align:center;}
+	.fl{float:left;}
+	.fr{float:right;}
+	body{
+		color:#333;
+		font-size:12px;
+		font-family:Arial,Tahoma,Verdana,sans-serif;
+	}
+	a {color:#333;}
+	a:hover{
+		text-decoration:underline;
+	}
+	${1}
+snippet v
+	vertical-align:${1:middle};${2}
+snippet z
+	z-index:${1:auto};${2}
+snippet zoo
+	zoom:1;${1}
