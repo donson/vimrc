@@ -5,8 +5,15 @@ NERD_tree       http://www.vim.org/scripts/script.php?script_id=1658
 matrix          http://www.vim.org/scripts/script.php?script_id=1189 
 "代码提示
 autocomplpop    http://www.vim.org/scripts/script.php?script_id=1879 
+"代码补全
+snipMate        http://www.vim.org/scripts/script.php?script_id=2540 
 "增强%匹配
 matchit         http://www.vim.org/scripts/script.php?script_id=39 
+"注释管理
+The NERD Commenter
+http://www.vim.org/scripts/script.php?script_id=1218
+"CSS 色彩预览 vimfiles/after/syntax/css.vim  
+css.vim         http://www.vim.org/scripts/script.php?script_id=2150        
 
 
 To try:

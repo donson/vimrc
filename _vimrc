@@ -65,7 +65,6 @@ autocmd! bufwritepost vimrc source $VIMRC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Set 7 lines to the curors - when moving vertical..
 set so=7
 set wildmenu "Turn on WiLd menu
@@ -122,51 +121,6 @@ map <leader>f3 :set fdm=marker<cr>
 set shortmess=atI
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors & Fonts & Syntax
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable syntax
-syntax enable
-
-if has("gui_running")
-    colorscheme desertEx
-    " Highlight current
-    set cursorline
-    set cursorcolumn
-    hi cursorline guibg=#333333
-    hi CursorColumn guibg=#333333
-    " Toggle Menu and Toolbar and switch fullscreen mode
-    set guioptions-=b " Hide bottom scrollbar
-    set guioptions-=R " Hide right scrollbar
-    set guioptions-=r
-    set guioptions-=l " Hide left scrollbar
-    set guioptions-=L
-    set guioptions-=m " Hide Menu
-    set guioptions-=T " Hide Toolbar
-    map <silent> <F11> :if &guioptions =~# 'm' <Bar>
-                \set guioptions-=m <bar>
-                \else <Bar>
-                \set guioptions+=m <Bar>
-                \endif<cr>
-    " Auto Maximize when vim starts.
-    if has("win32")
-        au GUIEnter * simalt ~x
-    elseif has("unix")
-        au GUIEnter * winpos 0 0
-        "set lines=999 columns=9999
-    endif
-else
-    set background=dark
-    colorscheme vivi
-endif
-
-" Omni menu colors
-hi Pmenu guibg=#333333
-hi PmenuSel guibg=#555555 guifg=#ffffff
-
-" Syntax
-au BufRead,BufNewFile *.js set ft=javascript.jquery
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Set FileEncodeing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("multi_byte")
@@ -215,6 +169,51 @@ endif
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Colors & Fonts & Syntax
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Enable syntax
+syntax enable
+
+if has("gui_running")
+    colorscheme desertEx
+    " Highlight current
+    set cursorline
+    set cursorcolumn
+    hi cursorline guibg=#333333
+    hi CursorColumn guibg=#333333
+    " Toggle Menu and Toolbar and switch fullscreen mode
+    set guioptions-=b " Hide bottom scrollbar
+    set guioptions-=R " Hide right scrollbar
+    set guioptions-=r
+    set guioptions-=l " Hide left scrollbar
+    set guioptions-=L
+    set guioptions-=m " Hide Menu
+    set guioptions-=T " Hide Toolbar
+    map <silent> <F11> :if &guioptions =~# 'm' <Bar>
+                \set guioptions-=m <bar>
+                \else <Bar>
+                \set guioptions+=m <Bar>
+                \endif<cr>
+    " Auto Maximize when vim starts.
+    if has("win32")
+        au GUIEnter * simalt ~x
+    elseif has("unix")
+        au GUIEnter * winpos 0 0
+        "set lines=999 columns=9999
+    endif
+else
+    set background=dark
+    colorscheme vivi
+endif
+
+" Omni menu colors
+hi Pmenu guibg=#333333
+hi PmenuSel guibg=#555555 guifg=#ffffff
+
+" Syntax
+au BufRead,BufNewFile *.js set ft=javascript.jquery
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files and backups
@@ -547,7 +546,7 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_OnSelect = 1
 let Tlist_Inc_Winwidth = 0
 let tlist_html_settings = 'html;s:Structure;o:Objects(ID);c:Classes;h:Headers;f:function'
-let tlist_xhtml_settings = 'html;s:Structure;o:Objects(ID);c:Classes;h:Headers;f:function'
+let tlist_xhtml_settings = 'html;s:Structure' ";o:Objects(ID);c:Classes;h:Headers;f:function'
 let tlist_javascript_settings = 'javascript;f:function;c:class;o:object;m:method;s:string;a:array;n:constant'
 let tlist_php_settings = 'php;c:class;d:constant;f:function'
 
