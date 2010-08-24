@@ -26,6 +26,9 @@ BufExplorer     http://www.vim.org/scripts/script.php?script_id=42
 "日期
 calendar.vim    http://www.vim.org/scripts/script.php?script_id=52 
 
+"Vim插件管理工具
+pathogen        http://www.vim.org/scripts/script.php?script_id=2332
+
 To try:
 xptemplate
 neocomplcache

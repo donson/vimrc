@@ -47,6 +47,9 @@ endif
 " Sets how many lines of history VIM has to remember
 set history=800
 
+" Enable pathogen
+call pathogen#runtime_append_all_bundles()
+
 " Enable filetype plugin
 filetype plugin on
 filetype indent on
