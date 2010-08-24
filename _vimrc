@@ -119,6 +119,8 @@ map <leader>f3 :set fdm=marker<cr>
 
 " Don't display start text :help iccf
 set shortmess=atI
+" Use matchit.vim
+runtime macros/matchit.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Set FileEncodeing
@@ -667,5 +669,21 @@ if has("win32")
     autocmd FileType css,html,htm map <leader>cthe <Esc>:%! csstidy - --silent=true --template=highest<CR>
     autocmd FileType css,html,htm map <leader>cthm <Esc>:%! csstidy - --template=highest<CR>
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Refresh Firefox (preserving scroll) on Vim save, using MozRepl
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd BufWriteCmd *.html,*.css,*.gtpl :call Refresh_firefox()
+"function! Refresh_firefox()
+  "if &modified
+    "write
+    "silent !echo  'vimYo = content.window.pageYOffset;
+                 "\ vimXo = content.window.pageXOffset;
+                 "\ BrowserReload();
+                 "\ content.window.scrollTo(vimXo,vimYo);
+                 "\ repl.quit();'  |
+                 "\ nc localhost 4242 2>&1 > /dev/null
+  "endif
+"endfunction
 
 set dictionary+=$VIMFILES/dict/dicts.txt
