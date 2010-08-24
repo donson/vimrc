@@ -33,6 +33,7 @@ http://hi.baidu.com/drdr/blog/item/e48c554e15b03a03b2de05af.html
 http://suckless.info/blog/?p=126
 mru.vim - 最常用文件列表 http://www.gracecode.com/archives/2989/ 
 lookupfile.vim - 找文件，很不错
+pathogen - Vim插件管理工具pathogen - http://developers.solidot.org/article.pl?sid=10/08/11/0258258 
 
 ======================================================================
 XPTemplate很强大，号称“终极snippet解决方案”
