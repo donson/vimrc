@@ -670,6 +670,13 @@ if has("win32")
     autocmd FileType css,html,htm map <leader>cthm <Esc>:%! csstidy - --template=highest<CR>
 endif
 
+""""""""""""""""""""""""""""""
+" => calendar.vim
+"""""""""""""""""""""""""""""""
+let g:calendar_diary="D:/Donson/diary"
+map <leader>cr :Calendar<cr>
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Refresh Firefox (preserving scroll) on Vim save, using MozRepl
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
