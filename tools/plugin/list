@@ -41,6 +41,12 @@ genutils        http://www.vim.org/scripts/script.php?script_id=197
 
 xptemplate      http://www.vim.org/scripts/script.php?script_id=2611 
 
+"专门用来安装Vimball格式的插件 
+Vimball         http://www.vim.org/scripts/script.php?script_id=1502 
+
+" 在屏幕上打开一个文件浏览器， 这样就可以方便地选择要编辑的文件了
+winmanager      http://www.vim.org/scripts/script.php?script_id=1440 
+
 To try:
 xptemplate
 neocomplcache
