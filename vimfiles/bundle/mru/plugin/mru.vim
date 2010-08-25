@@ -306,6 +306,15 @@ function! s:MRU_LoadList()
         let s:MRU_files = []
     endif
 
+    " Filter the file if not exists - 2010-08-25 10:13:51 - Donson
+    let n = 0
+    for fname in s:MRU_files
+        if !filereadable(fname)
+            call remove(s:MRU_files, n)
+        endif
+        let n += 1
+    endfor
+
     " Refresh the MRU menu with the latest list of filenames
     call s:MRU_Refresh_Menu()
 endfunction
