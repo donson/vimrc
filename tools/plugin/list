@@ -29,13 +29,21 @@ calendar.vim    http://www.vim.org/scripts/script.php?script_id=52
 "Vim插件管理工具
 pathogen        http://www.vim.org/scripts/script.php?script_id=2332
 
+"最常用文件列表
+mru.vim         http://www.vim.org/scripts/script.php?script_id=521 
+                http://www.gracecode.com/archives/2989/
+
+"找文件
+lookupfile.vim  http://www.vim.org/scripts/script.php?script_id=1581 
+
+"lookupfile依赖的一个通用函数库
+genutils        http://www.vim.org/scripts/script.php?script_id=197 
+
 To try:
 xptemplate
 neocomplcache
 http://hi.baidu.com/drdr/blog/item/e48c554e15b03a03b2de05af.html
 http://suckless.info/blog/?p=126
-mru.vim - 最常用文件列表 http://www.gracecode.com/archives/2989/ 
-lookupfile.vim - 找文件，很不错
 pathogen - Vim插件管理工具pathogen - http://developers.solidot.org/article.pl?sid=10/08/11/0258258 
 
 ======================================================================
