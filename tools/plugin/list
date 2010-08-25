@@ -39,12 +39,13 @@ lookupfile.vim  http://www.vim.org/scripts/script.php?script_id=1581
 "lookupfile依赖的一个通用函数库
 genutils        http://www.vim.org/scripts/script.php?script_id=197 
 
+xptemplate      http://www.vim.org/scripts/script.php?script_id=2611 
+
 To try:
 xptemplate
 neocomplcache
 http://hi.baidu.com/drdr/blog/item/e48c554e15b03a03b2de05af.html
 http://suckless.info/blog/?p=126
-pathogen - Vim插件管理工具pathogen - http://developers.solidot.org/article.pl?sid=10/08/11/0258258 
 
 ======================================================================
 XPTemplate很强大，号称“终极snippet解决方案”
@@ -56,6 +57,24 @@ XPTemplate 支持的功能：
 * 默认<Tab>移动到下个位置，<Shift-Tab>移动到上1个位置
 * 可以在正在填写的片段中嵌套使用其他代码片段
 * 对visual选择的内容可以生成包含的片段，类似eclipse的template
+主要功能：
+* 实时更新的内容填写
+* 智能下拉菜单提示snippet名
+* 纯文本的snippet定义方式和函数式的定义，易用性和灵活性的选择。
+* 动态生成的片段，默认值支持和对填写的内容的后期处理。
+* 上下文敏感的代码片段选择
+* 好看的高亮
+* 用于生成代码片段的自定义函数
+* 过滤机制：自动大小写转换等
+* 自动对文本和函数混合的表达式取值
+* 可重复的片段，用于switch-case等场合
+* 片段可以嵌套
+* 对visual选择的内容可以生成包含的片段，类似eclipse的template
+* 可选的自动缩进
+* 光标位置设定
+* 支持可命名的填写和匿名方式
+* 其他更多...... 
+
 
 作者博客
 http://hi.baidu.com/drdr/blog 
