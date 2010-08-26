@@ -609,10 +609,11 @@ autocmd FileType html set ft=html.django_template.jquery " For SnipMate & jquery
 "let g:jslint_command_options = '-conf ' .  $VIMFILES . '/extra/jslint/jsl.conf -nofilelisting -nocontext -nosummary -nologo -process'
 "autocmd BufWritePost,FileWritePost *.js call JavascriptLint()
 
-" ZenCoding
-"let g:user_zen_expandabbr_key = '<c-j>'
-"let g:use_zen_complete_tag = 1
-
+""""""""""""""""""""""""""""""
+" => ZenCoding
+"""""""""""""""""""""""""""""""
+let g:user_zen_expandabbr_key = '<c-j>'
+let g:use_zen_complete_tag = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Set OminComplete
@@ -678,7 +679,6 @@ endif
 """""""""""""""""""""""""""""""
 let g:calendar_diary="D:/Donson/diary"
 map <leader>cr :Calendar<cr>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Refresh Firefox (preserving scroll) on Vim save, using MozRepl

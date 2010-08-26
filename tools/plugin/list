@@ -47,6 +47,10 @@ Vimball         http://www.vim.org/scripts/script.php?script_id=1502
 " 在屏幕上打开一个文件浏览器， 这样就可以方便地选择要编辑的文件了
 winmanager      http://www.vim.org/scripts/script.php?script_id=1440 
 
+zencoding.vim   http://www.vim.org/scripts/script.php?script_id=2981 
+                http://github.com/mattn/zencoding-vim 
+                http://code.google.com/p/zen-coding/ 
+
 To try:
 xptemplate
 neocomplcache
