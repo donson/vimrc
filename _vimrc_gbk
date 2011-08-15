@@ -129,9 +129,9 @@ runtime macros/matchit.vim
 " => Set FileEncodeing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has("multi_byte")
-    set encoding=utf-8
-    set fileencodings=utf-8,chinese,latin-1
-    set fencs=utf-8,gbk,chinese,latin1
+    set encoding=gbk
+    set fileencodings=gbk,utf-8,chinese,latin-1
+    set fencs=gbk,utf-8,chinese,latin1
     set formatoptions+=mM
     set nobomb " Don' use Unicode
 
@@ -156,7 +156,7 @@ if has("multi_byte")
         endif
     else
         set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
-        set fileencoding=utf-8
+        set fileencoding=gbk
     endif
 else
     echoerr "Sorry, this version of gvim was not compiled with +multi_byte"
@@ -448,6 +448,7 @@ inoremap " ""<esc>:let leavechar='"'<cr>i
 inoremap )) (<esc>o)<esc>:let leavechar=")"<cr>O
 inoremap ]] [<esc>o]<esc>:let leavechar="]"<cr>O
 inoremap }} {<esc>o}<esc>:let leavechar="}"<cr>O
+
 vnoremap #( <esc>`>a)<esc>`<i(<esc>
 vnoremap #[ <esc>`>a]<esc>`<i[<esc>
 vnoremap #{ <esc>`>a}<esc>`<i{<esc>
@@ -545,7 +546,7 @@ let Tlist_Sort_Type = "order" " order by
 let Tlist_Use_Right_Window = 1 " split to the right side of the screen
 let Tlist_WinWidth = 40 " 40 cols wide, so i can (almost always) read my functions
 let Tlist_Exit_OnlyWindow = 1
-let Tlist_Show_Menu = 1
+let Tlist_Show_Menu = 0
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_OnSelect = 1
 let Tlist_Inc_Winwidth = 0
